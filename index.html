@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>নোভা ডিজিটাল – আপনার ব্যবসাকে এগিয়ে নিন</title>
+  <meta name="description" content="ওয়েব ডিজাইন, ডেভেলপমেন্ট ও ডিজিটাল মার্কেটিংয়ে আধুনিক সমাধান। আজই ফ্রি কনসালটেশন নিন।" />
+  <meta name="theme-color" content="#020617" />
+  <meta property="og:title" content="নোভা ডিজিটাল" />
+  <meta property="og:description" content="আপনার ব্যবসাকে নিয়ে যান পরবর্তী ধাপে।" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%237c3aed'/><text x='50' y='68' font-size='56' font-weight='700' text-anchor='middle' fill='white'>N</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Outfit", "Hind Siliguri", system-ui, sans-serif;
+      --color-brand-400: #a78bfa;
+      --color-brand-500: #8b5cf6;
+      --color-brand-600: #7c3aed;
+      --color-brand-700: #6d28d9;
+    }
+    @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-18px) } }
+    .animate-float { animation: float 7s ease-in-out infinite; }
+    section[id] { scroll-margin-top: 4rem; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    .nav-link.active { color: #fff; }
+    .nav-link.active::after { content: ""; display: block; height: 2px; margin-top: 2px; border-radius: 2px; background: var(--color-brand-400); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .animate-float { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-brand-600/50 [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-2 [&_a:focus-visible]:outline-brand-400 [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-brand-400 [&_input:focus-visible]:outline-brand-400 [&_textarea:focus-visible]:outline-brand-400">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900">মূল কনটেন্টে যান</a>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 backdrop-blur-lg bg-slate-950/70 border-b border-white/10 transition-shadow">
+    <nav aria-label="প্রধান মেনু" class="max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-6 h-16">
+      <a href="#home" id="logo" class="text-xl font-extrabold tracking-tight text-white">Nova<span class="text-brand-400">.</span></a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <li><a href="#home" class="nav-link hover:text-white transition">হোম</a></li>
+        <li><a href="#services" class="nav-link hover:text-white transition">সার্ভিস</a></li>
+        <li><a href="#testimonials" class="nav-link hover:text-white transition">ক্লায়েন্ট রিভিউ</a></li>
+        <li><a href="#contact" class="nav-link hover:text-white transition">যোগাযোগ</a></li>
+      </ul>
+      <a href="#contact" id="nav-cta" class="hidden md:inline-block rounded-full bg-brand-600 hover:bg-brand-500 px-5 py-2 text-sm font-semibold text-white transition">শুরু করুন</a>
+      <button id="menu-btn" type="button" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 -mr-2 text-white rounded-lg">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-5 pb-5 pt-2 text-slate-200">
+      <a href="#home" class="block py-3 border-b border-white/5">হোম</a>
+      <a href="#services" class="block py-3 border-b border-white/5">সার্ভিস</a>
+      <a href="#testimonials" class="block py-3 border-b border-white/5">ক্লায়েন্ট রিভিউ</a>
+      <a href="#contact" class="mt-4 block rounded-full bg-brand-600 py-3 text-center font-semibold text-white">শুরু করুন</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden pt-32 sm:pt-40 pb-24 sm:pb-28 px-5 sm:px-6">
+      <div aria-hidden="true" class="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] max-w-none h-[700px] rounded-full bg-brand-600/30 blur-[140px] animate-float"></div>
+      <div aria-hidden="true" class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-fuchsia-500/20 blur-[120px]"></div>
+      <div class="relative max-w-3xl mx-auto text-center">
+        <span class="inline-block mb-6 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-brand-400">✨ ১০০+ সফল প্রজেক্ট সম্পন্ন</span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-white text-balance">
+          আপনার ব্যবসাকে নিয়ে যান <span class="bg-gradient-to-r from-brand-400 to-fuchsia-400 bg-clip-text text-transparent">পরবর্তী ধাপে</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">আধুনিক ডিজাইন, শক্তিশালী ডেভেলপমেন্ট এবং স্মার্ট মার্কেটিং—সবকিছু এক জায়গায়।</p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" id="hero-cta" class="rounded-full bg-gradient-to-r from-brand-600 to-fuchsia-600 px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 hover:scale-105 active:scale-95 transition">ফ্রি কনসালটেশন নিন</a>
+          <a href="#services" id="hero-secondary" class="rounded-full border border-white/20 px-8 py-3.5 font-semibold text-white hover:bg-white/10 transition">সার্ভিস দেখুন</a>
+        </div>
+        <dl class="mt-16 grid grid-cols-3 gap-4 text-center">
+          <div><dt class="sr-only">প্রজেক্ট</dt><dd class="text-2xl sm:text-3xl font-bold text-white">১০০+</dd><p class="text-xs sm:text-sm text-slate-400">প্রজেক্ট</p></div>
+          <div><dt class="sr-only">সন্তুষ্ট ক্লায়েন্ট</dt><dd class="text-2xl sm:text-3xl font-bold text-white">৬০+</dd><p class="text-xs sm:text-sm text-slate-400">ক্লায়েন্ট</p></div>
+          <div><dt class="sr-only">অভিজ্ঞতা</dt><dd class="text-2xl sm:text-3xl font-bold text-white">৫ বছর</dd><p class="text-xs sm:text-sm text-slate-400">অভিজ্ঞতা</p></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 sm:py-24 px-5 sm:px-6" aria-labelledby="services-title">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="services-title" class="reveal text-3xl sm:text-4xl font-bold text-white text-center">আমাদের সার্ভিস</h2>
+        <p class="reveal mt-3 text-center text-slate-300">আপনার প্রয়োজন অনুযায়ী সেরা সমাধান</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 hover:-translate-y-2 hover:border-brand-500/60 hover:bg-white/10 transition duration-300">
+            <div aria-hidden="true" class="w-12 h-12 rounded-xl bg-brand-600/20 text-2xl flex items-center justify-center">🎨</div>
+            <h3 class="mt-5 text-xl font-semibold text-white">ওয়েব ডিজাইন</h3>
+            <p class="mt-3 text-slate-300 leading-relaxed">দৃষ্টিনন্দন ও রেসপনসিভ UI/UX ডিজাইন যা ভিজিটরদের কাস্টমারে পরিণত করে।</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 hover:-translate-y-2 hover:border-brand-500/60 hover:bg-white/10 transition duration-300 [transition-delay:80ms]">
+            <div aria-hidden="true" class="w-12 h-12 rounded-xl bg-brand-600/20 text-2xl flex items-center justify-center">💻</div>
+            <h3 class="mt-5 text-xl font-semibold text-white">ওয়েব ডেভেলপমেন্ট</h3>
+            <p class="mt-3 text-slate-300 leading-relaxed">দ্রুত, নিরাপদ ও স্কেলেবল ওয়েবসাইট এবং ওয়েব অ্যাপ্লিকেশন তৈরি।</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 hover:-translate-y-2 hover:border-brand-500/60 hover:bg-white/10 transition duration-300 [transition-delay:160ms]">
+            <div aria-hidden="true" class="w-12 h-12 rounded-xl bg-brand-600/20 text-2xl flex items-center justify-center">📈</div>
+            <h3 class="mt-5 text-xl font-semibold text-white">ডিজিটাল মার্কেটিং</h3>
+            <p class="mt-3 text-slate-300 leading-relaxed">SEO ও সোশ্যাল মিডিয়া ক্যাম্পেইনের মাধ্যমে আপনার ব্র্যান্ডের পৌঁছ বাড়ান।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 sm:py-24 px-5 sm:px-6 bg-white/[0.02]" aria-labelledby="testi-title">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="testi-title" class="reveal text-3xl sm:text-4xl font-bold text-white text-center">ক্লায়েন্টরা কী বলছেন</h2>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <figure class="reveal rounded-2xl border border-white/10 bg-slate-900/60 p-8">
+            <p class="text-yellow-400" role="img" aria-label="৫ এর মধ্যে ৫ স্টার">★★★★★</p>
+            <blockquote class="mt-4 text-slate-200 leading-relaxed">"অসাধারণ কাজ! নির্ধারিত সময়ের আগেই আমাদের ওয়েবসাইট ডেলিভারি দিয়েছে।"</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <span aria-hidden="true" class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-fuchsia-500 flex items-center justify-center font-bold text-white">র</span>
+              <span><span class="block font-semibold text-white text-sm">রাফি আহমেদ</span><span class="block text-xs text-slate-400">সিইও, টেকবিডি</span></span>
+            </figcaption>
+          </figure>
+          <figure class="reveal rounded-2xl border border-white/10 bg-slate-900/60 p-8 [transition-delay:80ms]">
+            <p class="text-yellow-400" role="img" aria-label="৫ এর মধ্যে ৫ স্টার">★★★★★</p>
+            <blockquote class="mt-4 text-slate-200 leading-relaxed">"তাদের মার্কেটিং স্ট্র্যাটেজিতে আমাদের বিক্রি ৩ মাসে দ্বিগুণ হয়েছে।"</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <span aria-hidden="true" class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-fuchsia-500 flex items-center justify-center font-bold text-white">স</span>
+              <span><span class="block font-semibold text-white text-sm">সুমাইয়া ইসলাম</span><span class="block text-xs text-slate-400">ফাউন্ডার, ফ্যাশন হাব</span></span>
+            </figcaption>
+          </figure>
+          <figure class="reveal rounded-2xl border border-white/10 bg-slate-900/60 p-8 [transition-delay:160ms]">
+            <p class="text-yellow-400" role="img" aria-label="৫ এর মধ্যে ৫ স্টার">★★★★★</p>
+            <blockquote class="mt-4 text-slate-200 leading-relaxed">"পেশাদার টিম, চমৎকার যোগাযোগ। সবাইকে রিকমেন্ড করব।"</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <span aria-hidden="true" class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-fuchsia-500 flex items-center justify-center font-bold text-white">ক</span>
+              <span><span class="block font-semibold text-white text-sm">কামরুল হাসান</span><span class="block text-xs text-slate-400">ম্যানেজার, গ্রিনলিফ</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 sm:py-24 px-5 sm:px-6" aria-labelledby="contact-title">
+      <div class="reveal max-w-3xl mx-auto rounded-3xl bg-gradient-to-r from-brand-700 to-fuchsia-700 p-8 sm:p-12">
+        <h2 id="contact-title" class="text-3xl sm:text-4xl font-bold text-white text-center">আপনার প্রজেক্ট শুরু করতে প্রস্তুত?</h2>
+        <p class="mt-4 text-white/90 text-center">ফর্মটি পূরণ করুন, আমরা ২৪ ঘণ্টার মধ্যে উত্তর দেব।</p>
+        <form id="contact-form" class="mt-8 grid gap-4" novalidate>
+          <div>
+            <label for="name" class="block mb-1.5 text-sm font-medium text-white">আপনার নাম</label>
+            <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-xl bg-white/95 px-4 py-3 text-slate-900 placeholder-slate-500" placeholder="যেমন: রাফি আহমেদ" />
+          </div>
+          <div>
+            <label for="email" class="block mb-1.5 text-sm font-medium text-white">ইমেইল</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl bg-white/95 px-4 py-3 text-slate-900 placeholder-slate-500" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="message" class="block mb-1.5 text-sm font-medium text-white">বার্তা</label>
+            <textarea id="message" name="message" rows="4" required class="w-full rounded-xl bg-white/95 px-4 py-3 text-slate-900 placeholder-slate-500" placeholder="আপনার প্রজেক্ট সম্পর্কে লিখুন..."></textarea>
+          </div>
+          <p id="form-msg" role="status" aria-live="polite" class="min-h-6 text-sm font-medium text-white"></p>
+          <button type="submit" id="contact-cta" class="rounded-full bg-white px-8 py-3.5 font-semibold text-brand-700 hover:scale-[1.02] active:scale-95 transition">বার্তা পাঠান</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-12 px-5 sm:px-6">
+    <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 md:grid-cols-3 text-sm">
+      <div>
+        <p class="text-xl font-extrabold text-white">Nova<span class="text-brand-400">.</span></p>
+        <p class="mt-3 text-slate-400">আধুনিক ডিজিটাল সমাধানে আপনার বিশ্বস্ত সঙ্গী।</p>
+      </div>
+      <nav aria-label="ফুটার লিংক">
+        <p class="font-semibold text-white">দ্রুত লিংক</p>
+        <ul class="mt-3 space-y-2 text-slate-400">
+          <li><a href="#services" class="hover:text-white">সার্ভিস</a></li>
+          <li><a href="#testimonials" class="hover:text-white">রিভিউ</a></li>
+          <li><a href="#contact" class="hover:text-white">যোগাযোগ</a></li>
+        </ul>
+      </nav>
+      <address class="not-italic">
+        <p class="font-semibold text-white">যোগাযোগ</p>
+        <ul class="mt-3 space-y-2 text-slate-400">
+          <li><a href="mailto:hello@nova.com" class="hover:text-white">hello@nova.com</a></li>
+          <li><a href="tel:+8801234567890" class="hover:text-white">+৮৮০ ১২৩৪-৫৬৭৮৯০</a></li>
+          <li>ঢাকা, বাংলাদেশ</li>
+        </ul>
+      </address>
+    </div>
+    <p class="mt-10 text-center text-xs text-slate-500">© <span id="year">2026</span> Nova Digital. সর্বস্বত্ব সংরক্ষিত।</p>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="to-top" type="button" aria-label="উপরে যান" class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 items-center justify-center rounded-full bg-brand-600 text-white shadow-lg hover:bg-brand-500 transition">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script>
+    (() => {
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('icon-open');
+      const iconClose = document.getElementById('icon-close');
+      const toTop = document.getElementById('to-top');
+      const navbar = document.getElementById('navbar');
+
+      const setMenu = (open) => {
+        menu.classList.toggle('hidden', !open);
+        iconOpen.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', open);
+        btn.setAttribute('aria-label', open ? 'মেনু বন্ধ করুন' : 'মেনু খুলুন');
+      };
+      btn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); btn.focus(); } });
+      matchMedia('(min-width:768px)').addEventListener('change', e => e.matches && setMenu(false));
+
+      // Scroll reveal
+      const items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); }
+        }), { threshold: 0.15 });
+        items.forEach(el => io.observe(el));
+      } else items.forEach(el => el.classList.add('show'));
+
+      // Active nav link
+      const links = document.querySelectorAll('.nav-link');
+      const spy = new IntersectionObserver((entries) => entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+
+      // Back to top + navbar shadow (throttled via rAF)
+      let ticking = false;
+      addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const y = scrollY;
+          toTop.classList.toggle('hidden', y < 600);
+          toTop.classList.toggle('flex', y >= 600);
+          navbar.classList.toggle('shadow-lg', y > 10);
+          ticking = false;
+        });
+      }, { passive: true });
+      toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Contact form (client-side validation; connect to your backend/Formspree later)
+      const form = document.getElementById('contact-form');
+      const msg = document.getElementById('form-msg');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          msg.textContent = '⚠️ অনুগ্রহ করে সব ঘর সঠিকভাবে পূরণ করুন।';
+          form.querySelector(':invalid').focus();
+          return;
+        }
+        msg.textContent = '✅ ধন্যবাদ! আপনার বার্তা পাঠানো হয়েছে।';
+        form.reset();
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
